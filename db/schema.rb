@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2022_07_03_185742) do
     t.string "category"
     t.string "address"
     t.string "provided"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
