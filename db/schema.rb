@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2022_07_03_211837) do
     t.string "website"
     t.string "category"
     t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

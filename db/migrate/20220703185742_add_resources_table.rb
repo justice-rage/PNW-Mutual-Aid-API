@@ -5,6 +5,7 @@ class AddResourcesTable < ActiveRecord::Migration[5.2]
       t.string :website
       t.string :category
       t.string :address
+      t.string :provided
       
 
       t.timestamps
