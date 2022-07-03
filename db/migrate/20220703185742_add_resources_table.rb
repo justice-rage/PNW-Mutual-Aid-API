@@ -1,11 +1,14 @@
 class AddResourcesTable < ActiveRecord::Migration[5.2]
   def change
     create_table :resources do |t|
-      t.column :name, :string
-      t.column :website, :string
-      t.column :category, :string
-      t.column :address, :string
-      t.column :provided, :string
+      t.string :name
+      t.string :website
+      t.string :category
+      t.string :address
+      t.string :provided
+      
+
+      t.timestamps
     end
   end
 end

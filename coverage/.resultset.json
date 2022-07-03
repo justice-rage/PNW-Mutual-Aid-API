@@ -1,6 +1,7 @@
 {
   "RSpec": {
     "coverage": {
+
       "/Users/justice/Desktop/pnw-mutual-aid-api/spec/models/resource_spec.rb": {
         "lines": [
           1,
@@ -317,5 +318,6 @@
       }
     },
     "timestamp": 1656885672
+
   }
 }
