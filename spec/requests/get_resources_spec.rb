@@ -13,13 +13,7 @@ describe "get all resources route", :type => :request do
     expect(response).to have_http_status(:success)
   end
 
-  it 'returns a resource by id' do 
-    @resource = Resource.create!(:name => 'little free blockbuster', :website => 'www.lfbb.org', :category => 'entertainment', :address = '789 feelinfine')
-    get "/resources/#{@resource.id}"
-    resource_response = []
-    resource_response << JSON.parse(response.body)
-    expect(resource_response.size).to eq(1)
-  end
+
 end
 
 
