@@ -2,18 +2,18 @@ class ResourcesController < ApplicationController
 
   def index
     # @resources = {"quotation": "This api is calling."} => working
-    @resources = Resources.all
+    @resources = Resource.all
     json_response(@resources)
   end
 
   def show
-    @resource = Resources.find(params[:id])
+    @resource = Resource.find(params[:id])
     json_response(@resource)
   end
 
   def create
-    @resource = Resources.create!(resource_params)
-    json_response(@resource. :created)
+    @resource = Resource.create!(resource_params)
+    json_response(@resource, :created)
   end
 
   def update
@@ -29,7 +29,7 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
     if @resource.destroy
       render status: 200, json: {
-        message: "Deleted Successfully"
+        message: "Deleted Successfully!"
       }
     end
   end
