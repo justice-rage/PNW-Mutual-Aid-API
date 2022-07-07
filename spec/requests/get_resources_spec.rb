@@ -20,4 +20,17 @@ describe "get all resources route", :type => :request do
 
 end
 
+describe "get resource by name" do
+
+  before do
+    post '/resources', params: { :name => 'goodwill but actually good', :website => "betterwill.com", :category => "housing", :address => "goodwill ave"}
+  end
+  
+  it 'searches resource by name' do
+    get '/resources?name=good'
+    puts response.body
+    expect(JSON.parse(response.body)[0]['name']).to eq('goodwill but actually good')
+  end
+end
+
 
