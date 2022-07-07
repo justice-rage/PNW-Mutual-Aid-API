@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+gesource 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
 gem 'rswag'
-gem 'will_paginate', '~> 3.3'
+gem 'will_paginate', '~> 3.3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
