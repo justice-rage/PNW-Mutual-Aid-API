@@ -20,5 +20,9 @@ describe 'post a resource route', :type => :request do
   it 'returns the resource address' do
     expect(JSON.parse(response.body)['address']).to eq('123 bumblebee')
   end
+
+  it 'returns a created status' do
+    expect(response).to have_http_status(:created)
+  end
 end
 
