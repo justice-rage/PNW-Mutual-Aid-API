@@ -1,0 +1,100 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/resources":
+    get:
+      summary: list resources
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create resource
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                website:
+                  type: string
+                category:
+                  type: string
+                address:
+                  type: string
+              required:
+              - name
+              - website
+              - category
+              - address
+  "/resources/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show resource
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update resource
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                website:
+                  type: string
+                category:
+                  type: string
+                address:
+                  type: string
+    put:
+      summary: update resource
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                website:
+                  type: string
+                category:
+                  type: string
+                address:
+                  type: string
+    delete:
+      summary: delete resource
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000/
