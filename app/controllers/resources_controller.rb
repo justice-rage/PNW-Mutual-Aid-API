@@ -1,8 +1,13 @@
 class ResourcesController < ApplicationController
 
   def index
-    # @resources = {"quotation": "This api is calling."} => working
-    @resources = Resource.all
+    if name = params[:name]
+      @resources = Resource.search(name)
+    elsif params[:page].present?
+      @resources = Resource.order('name ASC').paginate(:page => params[:page], per_page:10)
+    else
+      @resources = Resource.all
+    end
     json_response(@resources)
   end
 
