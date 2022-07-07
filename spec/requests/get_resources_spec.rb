@@ -13,6 +13,10 @@ describe "get all resources route", :type => :request do
     expect(response).to have_http_status(:success)
   end
 
+  it 'returns 10 resources at a time' do
+    get '/resources?page=1'
+    expect(JSON.parse(response.body).size).to eq(10)
+  end
 
 end
 
