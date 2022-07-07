@@ -18,6 +18,14 @@ describe "get all resources route", :type => :request do
     expect(JSON.parse(response.body).size).to eq(10)
   end
 
+  it 'returns a resource by id' do
+    @resource = Resource.create!(:name => 'goodwill but actually good', :website => "betterwill.com", :category => "housing", :address => "goodwill ave")
+    get "/resources/#{@resource.id}"
+    resource_response = []
+    resource_response << JSON.parse(response.body)
+    expect(resource_response.size).to eq(1)
+  end
+
 end
 
 describe "get resource by name" do
