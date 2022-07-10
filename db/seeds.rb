@@ -26,4 +26,4 @@ class Seed
   end
 end
   
-Seed.begin
+# Seed.begin
