@@ -22,7 +22,6 @@ RSpec.describe 'resources', type: :request do
       response(200, 'successful') do
         consumes 'application/json'
         parameter name: :resource, in: :body, schema: {
-          type: :object,
           properties: {
             name: { type: :string },
             website: { type: :string },
@@ -68,7 +67,6 @@ RSpec.describe 'resources', type: :request do
         let(:id) { '123' }
         consumes 'application/json'
         parameter name: :resource, in: :body, schema: {
-          type: :object,
           properties: {
             name: { type: :string },
             website: { type: :string },
@@ -93,7 +91,6 @@ RSpec.describe 'resources', type: :request do
         let(:id) { '123' }
         consumes 'application/json'
         parameter name: :resource, in: :body, schema: {
-          type: :object,
           properties: {
             name: { type: :string },
             website: { type: :string },
