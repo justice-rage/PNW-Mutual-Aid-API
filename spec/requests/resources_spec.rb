@@ -19,7 +19,7 @@ RSpec.describe 'resources', type: :request do
     end
 
     post('create resource') do
-      response(200, 'successful') do
+      response(201, 'successful') do
         consumes 'application/json'
         parameter name: :resource, in: :body, schema: {
           properties: {
@@ -38,6 +38,7 @@ RSpec.describe 'resources', type: :request do
             }
           }
         end
+        let(:resource) { { name: 'test', website: 'post', category: 'please', address: 'ignore' } }
         run_test!
       end
     end
@@ -48,6 +49,9 @@ RSpec.describe 'resources', type: :request do
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
     get('show resource') do
+      Resource.destroy_all
+      resource = Resource.create!(:name => 'SE Food Bank', :website => 'www.sefb.org', :category => 'food and sustenance', :address => '456 pickupsticks', :id => 123)
+
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -57,12 +61,15 @@ RSpec.describe 'resources', type: :request do
               example: JSON.parse(response.body, symbolize_names: true)
             }
           }
-        end
+        end 
+        let(:resource) { { :name => 'SE Food Bank', :website => 'www.sefb.org', :category => 'food and sustenance', :address => '456 pickupsticks'} }
         run_test!
       end
     end
 
     patch('update resource') do
+      Resource.destroy_all
+      resource = Resource.create!(:name => 'SE Food Bank', :website => 'www.sefb.org', :category => 'food and sustenance', :address => '456 pickupsticks', :id => 123)
       response(200, 'successful') do
         let(:id) { '123' }
         consumes 'application/json'
@@ -82,11 +89,14 @@ RSpec.describe 'resources', type: :request do
             }
           }
         end
+        let(:resource) { { :name => 'SE Food Bank', :website => 'www.sefb.org', :category => 'food and sustenance', :address => '123 pickupsticks'} }
         run_test!
       end
     end
 
     put('update resource') do
+      Resource.destroy_all
+      resource = Resource.create!(:name => 'SE Food Bank', :website => 'www.sefb.org', :category => 'food and sustenance', :address => '456 pickupsticks', :id => 123)
       response(200, 'successful') do
         let(:id) { '123' }
         consumes 'application/json'
@@ -107,10 +117,13 @@ RSpec.describe 'resources', type: :request do
           }
         end
         run_test!
+        let(:resource) { { :name => 'SE Food Bank', :website => 'www.sefb.org', :category => 'food and sustenance', :address => '123 pickupsticks'} }
       end
     end
 
     delete('delete resource') do
+      Resource.destroy_all
+      resource = Resource.create!(:name => 'SE Food Bank', :website => 'www.sefb.org', :category => 'food and sustenance', :address => '456 pickupsticks', :id => 123)
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -121,6 +134,7 @@ RSpec.describe 'resources', type: :request do
             }
           }
         end
+        let(:resource) { {} }
         run_test!
       end
     end
