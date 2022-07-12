@@ -2,16 +2,19 @@
 openapi: 3.0.1
 info:
   title: PNW Mutual Aid API V1
+  description: 'An Independent Project for Ruby on Rails - Building an API for Team Week'
   version: v1
+  license:
+    name: MIT
 paths:
   "/resources":
     get:
-      summary: list resources
+      summary: list mutual aid resources
       responses:
         '200':
           description: successful
     post:
-      summary: create resource
+      summary: creates a resource
       parameters: []
       responses:
         '200':
@@ -43,12 +46,12 @@ paths:
       schema:
         type: string
     get:
-      summary: show resource
+      summary: shows a resource with a specific id
       responses:
         '200':
           description: successful
     patch:
-      summary: update resource
+      summary: updates a resource with a specific id
       parameters: []
       responses:
         '200':
@@ -67,7 +70,7 @@ paths:
                 address:
                   type: string
     put:
-      summary: update resource
+      summary: updates a resource with a specific id
       parameters: []
       responses:
         '200':
@@ -86,20 +89,19 @@ paths:
                 address:
                   type: string
     delete:
-      summary: delete resource
+      summary: deletes a resource with a specific id
       responses:
         '200':
           description: successful
-  "/resources?name={name}":
+  "/resources/":
     parameters:
     - name: name
-      in: path
+      in: query
       description: name
-      required: true
       schema:
         type: string
     get:
-      summary: show resource
+      summary: returns a resource by `name` or `name ilike?`
       responses:
         '200':
           description: successful
