@@ -1,9 +1,9 @@
 # PNW-Mutual-Aid-API
 
 #### An Independent Project for Ruby on Rails - Building an API for Team Week! 
-##### Exercising our skills in building API endpoints, adding routes, concerns, modules, handling exceptions and adding success messages. Passing parameters into a GET route, utilizing FactoryBot for DRY and thorough testing of the Rails API. Providing CRUD functionality with proper documentation.
+##### Exercising our skills in building API endpoints, adding routes, concerns, modules, handling exceptions and adding success messages. Passing parameters into a GET route, utilizing FactoryBot for thorough unit testing of the Rails API. Providing CRUD functionality with proper documentation.
 
-#### By Justice Douglas, Rosie Gardner, Rob Sameh, Hans J. Schroeder
+#### By Justice Douglas, Rosie Gardner, Rob Sameh & Hans J. Schroeder
 
 ## Technologies Used
 
@@ -17,6 +17,7 @@
 * Rspec
 * Will_Paginate
 * Shoulda-Matchers
+* SimpleCov
 * FactoryBot
 * Rswag
 
