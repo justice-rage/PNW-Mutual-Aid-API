@@ -1,6 +1,6 @@
 # PNW-Mutual-Aid-API
 
-#### An Independent Project for Ruby on Rails - Building an API for Team Week! 
+#### Ruby on Rails - Building an API for Team Week! 
 ##### Exercising our skills in building API endpoints, adding routes, concerns, modules, handling exceptions and adding success messages. Passing parameters into a GET route, utilizing FactoryBot for thorough unit testing of the Rails API. Providing CRUD functionality with proper documentation.
 
 #### By Justice Douglas, Rosie Gardner, Rob Sameh & Hans J. Schroeder
@@ -52,9 +52,6 @@
 | POST   | `localhost:3000/resources?name=test&category=post&website=please&address=ignore` | Adds a Resource to the database => `name: test`, `category: post`, `website: please`, `address: ignore` => If `POST` is successful, returns database object for newly created Resource. | 201 |
 | PUT/PATCH | `localhost:3000/resources/183?name=PDX Cares` | Updates the name for a Resource with `id=183`. If PUT/PATCH is successful, returns database object for newly updated Resource. | 200 |
 | DELETE | `localhost:3000/resources/183` | Deletes the Resource with `id=183` from database | 200 |
-
-
-## Common Mistakes
 
 
 ## Known Bugs
