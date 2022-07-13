@@ -6,7 +6,7 @@ describe "get all resources route", :type => :request do
   before { get '/resources' }
 
   it 'returns all resources' do 
-    expect(JSON.parse(response.body).size). to eq(25)
+    expect(JSON.parse(response.body).size). to be >=(25)
   end
 
   it 'returns status code 200' do 
